@@ -9,6 +9,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [emailId, setEmailId] = useState("keshav@gmail.com");
   const [password, setPassword] = useState("Keshav@2123");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin  =async ()=>{
@@ -24,7 +25,7 @@ const Login = () => {
   navigate("/");
   
   }catch(err){
-      console.log(err.message);
+      setError(err.response.data);
     }
   }
 
@@ -51,12 +52,12 @@ const Login = () => {
               <input type="text" placeholder=""
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
-              className="input input-bordered w-full max-w-xs mb-5" />
+              className="input input-bordered w-full max-w-xs mb-2" />
             </label>
           </div>
+          <p className='text-red-600  mb-2'>{error}</p>
           <div className="card-actions justify-center">
-            <button 
-            onClick={handleLogin}
+            <button onClick={handleLogin}
             className="btn btn-primary ">Login</button>
           </div>
         </div>
