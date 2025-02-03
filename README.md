@@ -39,3 +39,7 @@
     - Use the React Redux useSelector/useDispatch hooks in React components
         Read data from the store with the useSelector hook
         Get the dispatch function with the useDispatch hook, and dispatch actions as needed
+
+- Get the feed and add the feed in th store
+- Build the user card on feed 
+- Edit Profile Feature like age, gender, photoUrl, about and skills

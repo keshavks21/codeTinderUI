@@ -16,10 +16,10 @@ const Login = () => {
     try{const res = await axios.post(BASE_URL+"/login",{
         emailId,
         password
-    },
-  {
-    withCredentials:true  
-  })
+      },
+      {
+        withCredentials:true  
+      })
 
   dispatch(addUser(res.data));
   navigate("/");
