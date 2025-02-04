@@ -27,13 +27,14 @@ const Feed = () => {
       getFeed()
     }, [])
 
-    // if (!userFeedData) return;
+    if (!userFeed) return;
+    if(userFeed.length ==0)return <h1 className="text-center mt-10 text-2xl ">No new user found</h1>
     
   return ( 
     userFeed && (
       <div>
         
-        {userFeed.map((userData,key)=><UserCard user={userData}/>)}
+        {<UserCard user={userFeed[0]}/>}
           
       </div>
     )   

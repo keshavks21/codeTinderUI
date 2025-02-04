@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { BASE_URL } from "../utils/constants";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { removeFeedUser } from "../utils/feedSlice";
 
 const UserCard = ({user}) => {
 
 
   const {firstName,lastName,photoUrl,about,gender,age,_id} = user;
  
-  
+  const dispatch =useDispatch();
 
   const handleSendRequest= async (status,id)=>{
     try{
@@ -15,7 +17,7 @@ const UserCard = ({user}) => {
         {},
         {withCredentials:true }
       );
-      console.log(res);
+      dispatch(removeFeedUser(id));
 
     }catch(err){
       console.log(err);
