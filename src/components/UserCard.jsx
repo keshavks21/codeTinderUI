@@ -19,8 +19,8 @@ const UserCard = ({user}) => {
     </div>
     <p>{about}</p> 
     <div className="card-actions">
-      <button className="btn btn-primary">Interested</button>
-      <button className="btn bg-rose-500">Ignore</button>
+      <button className="btn btn-primary">Ignore</button>
+      <button className="btn bg-rose-500 text-white">Interested</button>
     </div>
   </div>
 </div>
