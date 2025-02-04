@@ -1,7 +1,28 @@
+import { useEffect } from "react";
+import { BASE_URL } from "../utils/constants";
+import axios from "axios";
 
 const UserCard = ({user}) => {
 
-  const {firstName,lastName,photoUrl,about,gender,age} = user;
+
+  const {firstName,lastName,photoUrl,about,gender,age,_id} = user;
+ 
+  
+
+  const handleSendRequest= async (status,id)=>{
+    try{
+      const res = await axios.post(BASE_URL+"/request/send/"+status+"/"+id,
+        {},
+        {withCredentials:true }
+      );
+      console.log(res);
+
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+
 
   return (
     <div className="mt-10 flex justify-center">
@@ -19,8 +40,8 @@ const UserCard = ({user}) => {
     </div>
     <p>{about}</p> 
     <div className="card-actions">
-      <button className="btn btn-primary">Ignore</button>
-      <button className="btn bg-rose-500 text-white">Interested</button>
+      <button className="btn btn-primary" onClick={()=>handleSendRequest("ignored",_id)}>Ignore</button>
+      <button className="btn bg-rose-500 text-white" onClick={()=>handleSendRequest("interested", _id)}>Interested</button>
     </div>
   </div>
 </div>

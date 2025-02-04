@@ -14,8 +14,6 @@ const Connection = () => {
             const res = await axios.get(BASE_URL + "/user/connection",{withCredentials : true});
             
             dispatch(addConncection(res?.data?.Data));
-            // console.log(res);
-            
             
         }catch(err){
             console.log(err);
@@ -27,18 +25,18 @@ const Connection = () => {
         getConnections()
     },[])
 
-    // if(!connectionData)return ;
-    // if(connectionData.length()===0)return (<h1>No connection </h1>)
+    if(!connectionData)return ;
+    if(connectionData.length===0)return <h1 className='text-center'>No connection Found</h1>;;
 
   return (
    connectionData && (
    <div className='text-center '>
         <h1 className="  font-bold text-3xl my-4">Connections</h1>
         {
-            connectionData.map((data,key)=>{
-                const {firstName, lastName, photoUrl, about, gender, age } = data;
+            connectionData.map((data )=>{
+                const {_id,firstName, lastName, photoUrl, gender, age } = data;
                 return (
-                    <div className='w-1/2 h-24 flex items-center bg-base-300 mx-auto  my-4'>
+                    <div key={_id} className='w-1/2 h-24 flex items-center bg-base-300 mx-auto  my-4'>
                         <div><img src= {photoUrl} className='w-20 h-20 rounded-full m-2' alt="UserPhoto"  /></div>
                         <div className='ml-5 text-left'>
                             <p className='font-bold text-slate-700 text-xl'>{firstName + " "+ lastName}</p>

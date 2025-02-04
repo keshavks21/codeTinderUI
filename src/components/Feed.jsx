@@ -32,7 +32,7 @@ const Feed = () => {
   return ( 
     userFeed && (
       <div>
-        {/* {console.log(userFeed[1])} */}
+        
         {userFeed.map((userData,key)=><UserCard user={userData}/>)}
           
       </div>
