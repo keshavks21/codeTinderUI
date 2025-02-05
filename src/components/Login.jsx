@@ -7,9 +7,13 @@ import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [emailId, setEmailId] = useState("keshav@gmail.com");
-  const [password, setPassword] = useState("Keshav@2123");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName,setFirstName] = useState("");
+  const [lastName,setLastName] = useState("");
+  const [loginStatus, setLoginStatus] = useState(true);
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const handleLogin  =async ()=>{
@@ -29,12 +33,53 @@ const Login = () => {
     }
   }
 
+  const handleSignUp = async ()=>{
+    try{
+      const res = await axios.post(BASE_URL+"/signup",{
+          firstName,
+          lastName,
+          emailId,
+          password
+      },
+    {
+      withCredentials: true
+    })
+    dispatch(addUser(res?.data?.data));
+    navigate("/profile");
+
+    }catch(err){
+      console.log(err);
+      
+    }
+  }
+
   return (
     <div className='flex justify-center mt-14'>
       <div className="card bg-base-100 w-96 shadow-xl ">
         <div className="card-body">
-          <h2 className="card-title flex justify-center mb-5">Login</h2>
+          <h2 className="card-title flex justify-center mb-5">{loginStatus ? "Login" : "SignUp"}</h2>
           <div>
+            {!loginStatus && <><label className="form-control w-full max-w-xs">
+              <div className="label">
+                <span className="label-text font-bold mb-2">First Name</span>
+              </div>
+              <input type="text" placeholder=""
+              value={firstName}
+              onChange={(e)=>setFirstName(e.target.value)}
+              className="input input-bordered w-full max-w-xs mb-5" />
+            </label>
+            <label className="form-control w-full max-w-xs">
+              <div className="label">
+                <span className="label-text font-bold mb-2">Last Name</span>
+              </div>
+              <input type="text" placeholder=""
+              value={lastName}
+              onChange={(e)=>setLastName(e.target.value)}
+              className="input input-bordered w-full max-w-xs mb-5" />
+            </label>
+            </>}
+
+
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text font-bold mb-2">Email ID</span>
@@ -57,9 +102,10 @@ const Login = () => {
           </div>
           <p className='text-red-600  mb-2'>{error}</p>
           <div className="card-actions justify-center">
-            <button onClick={handleLogin}
-            className="btn btn-primary ">Login</button>
+            <button onClick={loginStatus ? handleLogin : handleSignUp}
+            className="btn btn-primary ">{loginStatus ? "Login" : "SignUp"}</button>
           </div>
+            <p className='cursor-pointer mt-2 text-indigo-700' onClick={()=>setLoginStatus(!loginStatus)}>{loginStatus ?"Click here to SignUp !":"Click here to Login !"}</p>
         </div>
       </div>
     </div>

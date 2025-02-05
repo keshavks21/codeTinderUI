@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { use } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import  { useState } from 'react';
+import { useDispatch} from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { BASE_URL } from '../utils/constants';
 import axios from "axios";
 
+
 const EditProfile = ({user}) => {
 const dispatch = useDispatch();
 const {firstName,lastName, emailId} = user;
-const [gender, setGender] = useState(user.gender);
-const [age, setAge] = useState(user.age);
-const [about, setAbout] = useState(user.about);
-const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-const [skills, setSkills] = useState(user.skills);
+const [gender, setGender] = useState(user.gender|| "");
+const [age, setAge] = useState(user.age || "");
+const [about, setAbout] = useState(user.about || "");
+const [photoUrl, setPhotoUrl] = useState(user.photoUrl || "");
+const [skills, setSkills] = useState(user.skills || "");
 const [error , setError] = useState("");
 
 const handleSave = async ()=>{
