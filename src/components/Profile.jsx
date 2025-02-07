@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux"
 import EditProfile from "./EditProfile"
-import UserCard from "./UserCard"
+import { useState } from "react";
 
 const Profile = () => {
   
-  const user = useSelector((state)=>state.user);
+  const user = useSelector((store)=>store.user);
+  
+  const [profileStatus, setProfileStatus] = useState(true);
  
   return (
-    user&& (
+    user && (
     <div className="flex justify-center">
-      <EditProfile user = {user}/>
-      <UserCard user ={user}/>
+      <EditProfile user = {user} profileStatus={profileStatus}/>
     </div>
     )
     

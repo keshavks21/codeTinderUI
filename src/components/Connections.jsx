@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
 import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addConncection } from '../utils/connectionSlice';
+import { useEffect } from 'react';
 
 const Connection = () => {
 
@@ -13,7 +13,7 @@ const Connection = () => {
         try{
             const res = await axios.get(BASE_URL + "/user/connection",{withCredentials : true});
             
-            dispatch(addConncection(res?.data?.Data));
+            dispatch(addConncection(res?.data?.data));
             
         }catch(err){
             console.log(err);

@@ -84,7 +84,7 @@ const Login = () => {
               <div className="label">
                 <span className="label-text font-bold mb-2">Email ID</span>
               </div>
-              <input type="text" placeholder=""
+              <input type="email" placeholder=""
               value={emailId}
               onChange={(e)=>setEmailId(e.target.value)}
               className="input input-bordered w-full max-w-xs mb-5" />
@@ -94,7 +94,7 @@ const Login = () => {
               <div className="label">
                 <span className="label-text font-bold mb-2">Password </span>
               </div>
-              <input type="text" placeholder=""
+              <input type="password" placeholder=""
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
               className="input input-bordered w-full max-w-xs mb-2" />

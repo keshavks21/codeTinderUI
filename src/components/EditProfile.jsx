@@ -3,16 +3,17 @@ import { useDispatch} from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { BASE_URL } from '../utils/constants';
 import axios from "axios";
+import UserCard from './UserCard';
 
 
-const EditProfile = ({user}) => {
+const EditProfile = ({user,profileStatus}) => {
 const dispatch = useDispatch();
 const {firstName,lastName, emailId} = user;
-const [gender, setGender] = useState(user.gender|| "");
-const [age, setAge] = useState(user.age || "");
-const [about, setAbout] = useState(user.about || "");
-const [photoUrl, setPhotoUrl] = useState(user.photoUrl || "");
-const [skills, setSkills] = useState(user.skills || "");
+const [gender, setGender] = useState(user?.gender|| "");
+const [age, setAge] = useState(user?.age || "");
+const [about, setAbout] = useState(user?.about || "");
+const [photoUrl, setPhotoUrl] = useState(user?.photoUrl || "");
+const [skills, setSkills] = useState(user?.skills || "");
 const [error , setError] = useState("");
 
 const handleSave = async ()=>{
@@ -120,6 +121,7 @@ try{
           </div>
         </div>
       </div>
+      <UserCard user ={{firstName, lastName, age, gender, about, skills, photoUrl}} profileStatus={profileStatus}/>
     </div>
     </div>
   )
