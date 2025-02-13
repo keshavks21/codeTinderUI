@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addConncection } from '../utils/connectionSlice';
 import { useEffect } from 'react';
+import {Link} from "react-router-dom"
 
 const Connection = () => {
 
@@ -36,12 +37,13 @@ const Connection = () => {
             connectionData.map((data )=>{
                 const {_id,firstName, lastName, photoUrl, gender, age } = data;
                 return (
-                    <div key={_id} className='w-1/2 h-24 flex items-center bg-base-300 mx-auto  my-4'>
-                        <div><img src= {photoUrl} className='w-20 h-20 rounded-full m-2' alt="UserPhoto"  /></div>
+                    <div key={_id} className='w-1/2 h-24 flex items-center bg-base-300 mx-auto justify-between my-4'>
+                        <div><img src= {photoUrl} className='w-20 h-20 rounded-full mx-10' alt="UserPhoto"  /></div>
                         <div className='ml-5 text-left'>
                             <p className='font-bold text-slate-700 text-xl'>{firstName + " "+ lastName}</p>
                             <p>{age +" "+ gender}</p>
                         </div>
+                        <Link to={"/chat/" + _id}><button className='bg-indigo-700 m-2 p-2 rounded-md text-white mx-10'>Chat</button></Link>
                     </div>
                 )
                 

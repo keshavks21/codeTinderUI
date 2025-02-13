@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BASE_URL } from "../utils/constants";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -13,7 +12,7 @@ const UserCard = ({user,profileStatus}) => {
 
   const handleSendRequest= async (status,id)=>{
     try{
-      const res = await axios.post(BASE_URL+"/request/send/"+status+"/"+id,
+      await axios.post(BASE_URL+"/request/send/"+status+"/"+id,
         {},
         {withCredentials:true }
       );
