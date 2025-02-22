@@ -36,11 +36,15 @@ try{
 }
 
   return (
-    <div>
-      <div className='flex justify-center mt-14'>
-      <div className="card bg-base-100 w-96 shadow-xl ">
+    <div className='mt-5'>
+      <h2 className="card-title text-2xl flex justify-center  font-semibold">Your Profile</h2>
+      <div className=' md:flex justify-center'>
+        <div>
+          <UserCard user ={{firstName, lastName, age, gender, about, skills, photoUrl}} profileStatus={profileStatus}/>
+        </div>
+      <div className="card bg-base-100 w-96 shadow-xl mt-2 ">
+        <h1 className='text-2xl flex justify-center font-semibold p-2'>Edit Details</h1>
         <div className="card-body">
-          <h2 className="card-title flex justify-center mb-5">Your Profile</h2>
           <div>
             <label className="form-control w-full max-w-xs">
               <div className="label">
@@ -121,7 +125,7 @@ try{
           </div>
         </div>
       </div>
-      <UserCard user ={{firstName, lastName, age, gender, about, skills, photoUrl}} profileStatus={profileStatus}/>
+      
     </div>
     </div>
   )

@@ -53,3 +53,9 @@
 - Get the feed and add the feed in th store
 - Build the user card on feed 
 - Edit Profile Feature like age, gender, photoUrl, about and skills
+
+
+
+- For auto scroll to top in chat : useEffect(()=>{
+    messageRef.current?.scrollIntoView();
+  },[messages])

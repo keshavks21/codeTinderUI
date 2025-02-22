@@ -34,7 +34,7 @@ const ShippingAndDelivery = () => {
 
       <h2 className="text-xl font-semibold mt-4 mb-2">5. Issues with Delivery</h2>
       <p className="mb-2">
-        If you experience any issues with your delivery, please contact our support team at <a href="mailto:support@example.com" className="text-blue-600 underline">support@example.com</a>. Be sure to include your order number and details about the issue.
+        If you experience any issues with your delivery, please contact our support team at <a href="mailto:keshavks9810@gmail.com" className="text-blue-600 underline">support@example.com</a>. Be sure to include your order number and details about the issue.
       </p>
 
       <h2 className="text-xl font-semibold mt-4 mb-2">6. Changes to this Policy</h2>

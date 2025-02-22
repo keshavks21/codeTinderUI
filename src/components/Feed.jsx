@@ -4,13 +4,11 @@ import { BASE_URL } from '../utils/constants';
 import axios from "axios";
 import { useSelector , useDispatch} from "react-redux";
 import { addFeed } from "../utils/feedSlice";
-import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
 
     const userFeed = useSelector((store)=>store.feed);
     const dispatch = useDispatch();  
-    const navigate = useNavigate();
     
     const getFeed =async ()=>{
         if (userFeed) return;
@@ -36,7 +34,7 @@ const Feed = () => {
     
     userFeed && (
       
-      <div>
+      <div >
         
         {<UserCard user={userFeed[0]}/>}
           
