@@ -1,4 +1,4 @@
-# CodeTinder
+# DevCircle
 
 - Create a Vite + React application
 - npm install
