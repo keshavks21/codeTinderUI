@@ -14,9 +14,9 @@ import TermAndConditions from './policy/TermAndConditions';
 import CancellationAndRefund from './policy/CancellationAndRefund';
 import ContactUs from './policy/ContactUs';
 import ShippingAndDelivery from './policy/ShippingAndDelivery';
-import Premium from './components/premium';
+import Premium from './components/Premium';
 
-function App() {
+function App() { 
 
   return (
     <Provider store={appStore} >
