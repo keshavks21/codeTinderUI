@@ -98,6 +98,7 @@ const Login = () => {
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
               className="input input-bordered w-full max-w-xs mb-2" />
+              {loginStatus ? "" : "Atleast one number, capital & small alphabet and special charcter" }
             </label>
           </div>
           <p className='text-red-600  mb-2'>{error}</p>

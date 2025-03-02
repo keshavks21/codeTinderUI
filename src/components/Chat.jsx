@@ -17,7 +17,8 @@ const Chat = () => {
 
   const fetchTargetUserInfo = async()=>{
     const data = await axios.get(BASE_URL+"/user/connection/"+targetUserId,{withCredentials:true});
-    console.log(data?.data?.data?.photoUrl);
+    console.log(data?.data?.data);
+
     setTargetUser(data?.data?.data);
     
   }
@@ -112,7 +113,7 @@ const Chat = () => {
             className=" bg-base-300 w-full rounded-2xl p-2"/></div>
             <div 
             onClick={sendMessage}
-            className=" px-5 ml-2 bg-emerald-500 rounded-2xl p-2">send</div>
+            className=" px-5 ml-2 bg-emerald-500 rounded-2xl p-2 cursor-pointer">send</div>
         </div>
       </div>
     </div>
