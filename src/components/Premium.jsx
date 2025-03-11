@@ -1,7 +1,22 @@
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
+import { useEffect, useState } from "react";
 
 const Premium = ()=>{
+
+    const [isUserPremium, setIsUserPremium] = useState(false);
+    useEffect(()=>{
+        verifyPremiumUser();
+    },[])
+
+    const verifyPremiumUser = async()=>{
+        const res = await axios.get(BASE_URL+"/premium/verify", {withCredentials:true});
+        console.log(res);
+        
+        if(res.data.isPremium){
+            setIsUserPremium(true);            
+        }
+    }
 
     const handleBuy = async(type)=>{
         const order = await axios.post(BASE_URL+"/payment/create",{membershipType:type},
@@ -25,16 +40,18 @@ const Premium = ()=>{
         theme: {
           color: '#F37254'
         },
+        handler:  verifyPremiumUser,
         }
-
-        const rzp = new window. Razorpay(options);
+        const rzp = new window.Razorpay(options);
         rzp.open();
     }
 
-    return (
-        <div>
+    return isUserPremium ? (
+            <h1 className="text-center text-2xl font-bold mt-10">You are a Premium User</h1>
+    ) :(
+        <div> 
             <div className="flex w-full mt-10">
-                <div className="card bg-base-300 rounded-box grid h-80 flex-grow place-items-center mx-10">
+              <div className="card bg-base-300 rounded-box grid h-80 flex-grow place-items-center mx-10">
                     <h1 className="text-2xl font-bold">Silver Membership</h1>
                     <ui>
                         <li>100 request per day</li>
