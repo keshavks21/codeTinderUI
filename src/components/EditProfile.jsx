@@ -4,6 +4,7 @@ import { addUser } from '../utils/userSlice';
 import { BASE_URL } from '../utils/constants';
 import axios from "axios";
 import UserCard from './UserCard';
+import { useNavigate } from 'react-router-dom';
 
 
 const EditProfile = ({user,profileStatus}) => {
@@ -15,6 +16,8 @@ const [about, setAbout] = useState(user?.about || "");
 const [photoUrl, setPhotoUrl] = useState(user?.photoUrl || "");
 const [skills, setSkills] = useState(user?.skills || "");
 const [error , setError] = useState("");
+const [saveInfo, setSaveInfo] = useState(false);
+const navigate = useNavigate();
 
 const handleSave = async ()=>{
     setError("");
@@ -29,6 +32,11 @@ try{
     {withCredentials : true})
 
     dispatch(addUser(res?.data?.data));
+    setSaveInfo(true);
+    setTimeout(() => {
+      setSaveInfo(false);
+      navigate("/");
+    }, 3000);
 
 }catch(err){
    setError(err.response.data);   
@@ -37,6 +45,15 @@ try{
 
   return (
     <div className='mt-5'>
+      
+    {saveInfo && <div role="alert" className="alert alert-success">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current " fill="none" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span className='text-xl text-white'>Profile saved successfully </span>
+        <h1 > Redirecting to Home Page</h1>
+    </div>}
+
       <h2 className="card-title text-2xl flex justify-center  font-semibold">Your Profile</h2>
       <div className=' md:flex justify-center'>
         <div>

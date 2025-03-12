@@ -27,7 +27,7 @@ const Connection = () => {
     },[])
 
     if(!connectionData)return ;
-    if(connectionData.length===0)return <h1 className='text-center'>No connection Found</h1>;;
+    if(connectionData.length===0)return <h1 className="text-center text-2xl font-semibold mt-10">No connection Found</h1>;;
 
   return (
    connectionData && (
