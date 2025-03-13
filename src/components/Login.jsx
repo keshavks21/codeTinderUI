@@ -17,6 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin  =async ()=>{
+    setError("")
     try{const res = await axios.post(BASE_URL+"/login",{
         emailId,
         password
@@ -35,6 +36,7 @@ const Login = () => {
   }
 
   const handleSignUp = async ()=>{
+    setError("")
     try{
       
       const res = await axios.post(BASE_URL+"/signup",{
