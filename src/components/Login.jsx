@@ -29,12 +29,14 @@ const Login = () => {
   navigate("/");
   
   }catch(err){
+    console.log(err)
       setError(err.response.data);
     }
   }
 
   const handleSignUp = async ()=>{
     try{
+      
       const res = await axios.post(BASE_URL+"/signup",{
           firstName,
           lastName,
@@ -49,7 +51,7 @@ const Login = () => {
 
     }catch(err){
       console.log(err);
-      
+      setError(err.response.data);
     }
   }
 

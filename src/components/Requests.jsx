@@ -3,6 +3,7 @@ import { BASE_URL } from "../utils/constants"
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addRequest , removeRequest} from "../utils/requestSlice";
+import { use } from "react";
 
 const Requests = () => {
 
@@ -37,6 +38,9 @@ const request = async()=>{
     useEffect(()=>{
         request();
     },[])
+
+    if (!requestData) return;
+    if(requestData.length ==0)return <h1 className="text-center text-2xl font-semibold mt-10">No request found</h1>
 
   return(
    requestData && (

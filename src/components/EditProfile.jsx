@@ -21,6 +21,7 @@ const navigate = useNavigate();
 
 const handleSave = async ()=>{
     setError("");
+ 
 try{
     const res = await axios.patch(BASE_URL+"/profile/edit",{
         gender,
@@ -32,11 +33,13 @@ try{
     {withCredentials : true})
 
     dispatch(addUser(res?.data?.data));
+
     setSaveInfo(true);
     setTimeout(() => {
       setSaveInfo(false);
       navigate("/");
     }, 3000);
+    window.scrollTo(0,0);
 
 }catch(err){
    setError(err.response.data);   
