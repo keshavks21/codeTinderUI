@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux"
 import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -110,7 +111,14 @@ const Login = () => {
             <button onClick={loginStatus ? handleLogin : handleSignUp}
             className="btn btn-primary ">{loginStatus ? "Login" : "SignUp"}</button>
           </div>
-            <p className='cursor-pointer mt-2 text-indigo-700' onClick={()=>setLoginStatus(!loginStatus)}>{loginStatus ?"Click here to SignUp !":"Click here to Login !"}</p>
+
+          {loginStatus ?(
+              <div className='cursor-pointer mt-2 text-indigo-700 flex justify-between' >
+              <h2 onClick={()=>setLoginStatus(!loginStatus)}>Click here to SignUp</h2>
+              <Link to="/passreset" className='' >Forget password</Link>
+              </div> ):
+              (<div className='cursor-pointer mt-2 text-indigo-700 ' onClick={()=>setLoginStatus(!loginStatus)}>Click here to Login !</div>)
+          }
         </div>
       </div>
     </div>

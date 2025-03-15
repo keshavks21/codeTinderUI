@@ -15,6 +15,7 @@ import CancellationAndRefund from './policy/CancellationAndRefund';
 import ContactUs from './policy/ContactUs';
 import ShippingAndDelivery from './policy/ShippingAndDelivery';
 import Premium from './components/Premium';
+import ResetPassword from './components/ResetPassword';
 
 function App() { 
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/request" element={<Requests/>}/>
                 <Route path="/premium" element={<Premium/>}/>
                 <Route path="/contactus" element={<ContactUs/>}/>
+                <Route path="/passreset" element={<ResetPassword/>}/>
               </Route>
                 <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
                 <Route path="/term&conditions" element={<TermAndConditions/>}/>
