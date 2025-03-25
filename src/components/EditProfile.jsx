@@ -68,7 +68,7 @@ try{
           <div>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text font-bold mb-2">FirstName</span>
+                <span className="label-text font-bold mb-2">FirstName*</span>
               </div>
               <input type="text" placeholder=""
               value={firstName}
@@ -84,7 +84,7 @@ try{
             </label>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text font-bold mb-2">Email ID</span>
+                <span className="label-text font-bold mb-2">Email ID*</span>
               </div>
               <input type="text" placeholder=""
               value={emailId}
@@ -92,7 +92,7 @@ try{
             </label>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text font-bold mb-2">Gender</span>
+                <span className="label-text font-bold mb-2">Gender*</span>
               </div>
               <input type="text" placeholder=""
               value={gender}

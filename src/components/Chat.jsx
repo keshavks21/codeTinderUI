@@ -89,6 +89,7 @@ const Chat = () => {
             src={targetUser?.photoUrl} />
         </div>
         <div className="">{targetUser?.firstName}</div>
+        
         </div>
        
         <div  className=" p-5 h-[50vh] overflow-y-scroll scroll-m-14">
