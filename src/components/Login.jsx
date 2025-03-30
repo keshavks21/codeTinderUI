@@ -58,6 +58,11 @@ const Login = () => {
     }
   }
 
+  const handleSignIn_Up= ()=>{
+    setLoginStatus(!loginStatus);
+    setError("");
+  }
+
   return (
     <div className='flex justify-center mt-14'>
       <div className="card bg-base-100 w-96 shadow-xl ">
@@ -116,10 +121,10 @@ const Login = () => {
 
           {loginStatus ?(
               <div className='cursor-pointer mt-2 text-indigo-700 flex justify-between' >
-              <h2 onClick={()=>setLoginStatus(!loginStatus)}>Click here to SignUp</h2>
+              <h2 onClick={handleSignIn_Up}>Click here to SignUp</h2>
               <Link to="/passreset" className='' >Forget password</Link>
               </div> ):
-              (<div className='cursor-pointer mt-2 text-indigo-700 ' onClick={()=>setLoginStatus(!loginStatus)}>Click here to Login !</div>)
+              (<div className='cursor-pointer mt-2 text-indigo-700 ' onClick={handleSignIn_Up}>Click here to Login !</div>)
           }
         </div>
       </div>
