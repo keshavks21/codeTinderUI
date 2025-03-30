@@ -95,21 +95,23 @@ const Login = () => {
               className="input input-bordered w-full max-w-xs mb-5" />
             </label>
 
-            <label className="form-control w-full max-w-xs ">
-              <div className="label">
-                <span className="label-text font-bold mb-2">Password </span>
-              </div>
-              <input type="password" placeholder=""
-              value={password}
-              onChange={(e)=>setPassword(e.target.value)}
-              className="input input-bordered w-full max-w-xs mb-2" />
-              {loginStatus ? "" : "Atleast one number, capital & small alphabet and special charcter" }
-            </label>
+            
+          <label className="form-control w-full max-w-xs ">
+            <div className="label">
+              <span className="label-text font-bold mb-2">Password </span>
+            </div>
+            <input type="password" placeholder=""
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+            className="input input-bordered w-full max-w-xs mb-2" />
+            {loginStatus ? "" : "Atleast one number, capital & small alphabet and special charcter" }
+          </label>
+            
           </div>
           <p className='text-red-600  mb-2'>{error}</p>
           <div className="card-actions justify-center">
             <button onClick={loginStatus ? handleLogin : handleSignUp}
-            className="btn btn-primary ">{loginStatus ? "Login" : "SignUp"}</button>
+            className="btn btn-primary ">{loginStatus ? "Login" :"Sign UP"}</button>
           </div>
 
           {loginStatus ?(

@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="mt-2 md:mt-30  footer footer-center bg-base-300 text-base-content p-2 ">
+      <footer className="fixed bottom-0  footer footer-center bg-base-300 text-base-content p-2 ">
         <aside>
           <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by ACME
-            Industries Ltd
+            Copyright © {new Date().getFullYear()} - All right reserved by DevCircle
           </p>
         </aside>
         <nav className="grid grid-flow-row md:grid-flow-col md:gap-4">

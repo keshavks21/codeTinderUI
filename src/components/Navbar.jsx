@@ -23,7 +23,7 @@ const Navbar = () => {
     <div>
        <div className="navbar  bg-base-100 shadow-sm  z-10">
   <div className="flex-1">
-    <Link to="/" className="btn btn-ghost text-xl bg-base-300">DevCircle</Link>
+    <Link to={user ? "/":"/login"} className="btn btn-ghost text-xl bg-base-300">DevCircle</Link>
   </div>
 {   user && <div className="flex items-center font-semibold">
   
