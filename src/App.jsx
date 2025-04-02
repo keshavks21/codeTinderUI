@@ -9,6 +9,7 @@ import Feed from './components/Feed';
 import Connections from './components/Connections';
 import Requests from './components/Requests';
 import Chat from './components/Chat';
+import PrivateRoute from './components/PrivateRoute';
 import PrivacyPolicy from './policy/PrivacyPolicy';
 import TermAndConditions from './policy/TermAndConditions';
 import CancellationAndRefund from './policy/CancellationAndRefund';
@@ -25,9 +26,9 @@ function App() {
 
       <BrowserRouter basename='/'>
           <Routes>
-              <Route path="/" element={<Body/>}>
-                <Route path="/" element={<Feed/>}/>
                 <Route path="/login" element={<Login/>}/>
+              <Route path="/" element={<PrivateRoute><Body/></PrivateRoute>}>
+                <Route path="/" element={<Feed/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/connection" element={<Connections/>}/>
                 <Route path="/chat/:targetUserId" element={<Chat/>}/>

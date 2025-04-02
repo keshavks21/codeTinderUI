@@ -5,7 +5,8 @@ import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
 import { Link } from 'react-router-dom';
-
+import Navbar from './Navbar';
+ 
 const Login = () => {
   const dispatch = useDispatch();
   const [emailId, setEmailId] = useState("");
@@ -64,6 +65,8 @@ const Login = () => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className='flex justify-center mt-14'>
       <div className="card bg-base-100 w-96 shadow-xl ">
         <div className="card-body">
@@ -129,6 +132,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
