@@ -42,7 +42,7 @@ const UserCard = ({user,profileStatus}) => {
     <p>{about}</p> 
     {!profileStatus && <div className="card-actions">
       <button className="btn btn-primary" onClick={()=>handleSendRequest("ignored",_id)}>Ignore</button>
-      <button className="btn bg-rose-500 text-white" onClick={()=>handleSendRequest("interested", _id)}>Interested</button>
+      <button className="btn bg-rose-500 text-white" onClick={()=>handleSendRequest("interested", _id)}>Connect</button>
     </div>}
   </div>
 </div>

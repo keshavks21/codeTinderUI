@@ -27,6 +27,7 @@ function App() {
       <BrowserRouter basename='/'>
           <Routes>
                 <Route path="/login" element={<Login/>}/>
+                <Route path="/passreset" element={<ResetPassword/>}/>
               <Route path="/" element={<PrivateRoute><Body/></PrivateRoute>}>
                 <Route path="/" element={<Feed/>}/>
                 <Route path="/profile" element={<Profile/>}/>
@@ -35,7 +36,6 @@ function App() {
                 <Route path="/request" element={<Requests/>}/>
                 <Route path="/premium" element={<Premium/>}/>
                 <Route path="/contactus" element={<ContactUs/>}/>
-                <Route path="/passreset" element={<ResetPassword/>}/>
                 <Route path="*" element={<URLError/>}/>
               </Route>
                 <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>

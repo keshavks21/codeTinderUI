@@ -21,6 +21,7 @@ const ResetPassword = () => {
             {withCredentials:true})
             setUserVerified(true);
        }catch(err){
+        setError(err.response.data);
         console.log(err)
        }
         
@@ -33,6 +34,7 @@ const ResetPassword = () => {
                 {withCredentials:true});
                 setResetPass(true);
            }catch(err){
+            setError(err.response.data);
             console.log(err)
            }
     }
@@ -43,6 +45,7 @@ const ResetPassword = () => {
             {withCredentials:true})
             navigate("/login")
         }catch(err){
+          setError(err.response.data);
             console.log(err)
         } 
     }
@@ -90,6 +93,7 @@ const ResetPassword = () => {
               className="input input-bordered w-full max-w-xs mb-5"
             />
           </label>}
+
           <p className='text-red-600  mb-2'>{error}</p>
           <div className="card-actions">
             <button 
