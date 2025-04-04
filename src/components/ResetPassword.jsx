@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { BASE_URL } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar"
 
 const ResetPassword = () => {
 
@@ -51,6 +52,9 @@ const ResetPassword = () => {
     }
 
   return (
+    <>
+    <Navbar/>
+   
     <div className="flex justify-center mt-14">
       <div className="card bg-base-100 w-96 shadow-sm">
         <div className="card-body items-center text-center">
@@ -103,6 +107,7 @@ const ResetPassword = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
