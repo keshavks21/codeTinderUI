@@ -62,7 +62,7 @@ try{
         <div>
           <UserCard user ={{firstName, lastName, age, gender, about, skills, photoUrl}} profileStatus={profileStatus}/>
         </div>
-      <div className="card bg-base-100 w-96 shadow-xl mt-2 ">
+      <div className="card bg-base-100 w-96 shadow-xl mt-10 mx-4">
         <h1 className='text-2xl flex justify-center font-semibold p-2'>Edit Details</h1>
         <div className="card-body">
           <div>

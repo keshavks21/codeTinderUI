@@ -26,7 +26,7 @@ const UserCard = ({user,profileStatus}) => {
 
 
   return (
-    <div className="mt-1 flex justify-center">
+    <div className="mt-10 flex justify-center">
      <div className="card bg-base-100 w-96 shadow-xl ">
   <figure className="px-10 pt-10">
     <img

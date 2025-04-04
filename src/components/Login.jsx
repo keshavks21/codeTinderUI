@@ -67,7 +67,7 @@ const Login = () => {
   return (
     <>
     <Navbar/>
-    <div className='flex justify-center mt-14'>
+    <div className='flex justify-center mt-14 '>
       <div className="card bg-base-100 w-96 shadow-xl ">
         <div className="card-body">
           <h2 className="card-title flex justify-center mb-5">{loginStatus ? "Login" : "SignUp"}</h2>

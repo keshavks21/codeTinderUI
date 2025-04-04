@@ -11,7 +11,7 @@ const Premium = ()=>{
 
     const verifyPremiumUser = async()=>{
         const res = await axios.get(BASE_URL+"/premium/verify", {withCredentials:true});
-        console.log(res);
+        // console.log(res);
         
         if(res.data.isPremium){
             setIsUserPremium(true);            
@@ -51,7 +51,7 @@ const Premium = ()=>{
     ) :(
         <div> 
             <div className="flex w-full mt-10 flex-col md:flex-row  gap-10">
-              <div className="card bg-base-300 rounded-box  grid h-80 flex-grow place-items-center mx-10">
+              <div className="card bg-white rounded-box  grid h-80 flex-grow place-items-center mx-10">
                     <h1 className="text-2xl font-bold">Silver Membership</h1>
                     <ui>
                         <li>100 request per day</li>
@@ -62,7 +62,7 @@ const Premium = ()=>{
                     className="btn font-semibold bg-purple-800 text-white">Buy Silver</button>
                 </div>
               
-                <div className="card bg-base-300 rounded-box grid h-80 flex-grow place-items-center mx-10">
+                <div className="card bg-white rounded-box grid h-80 flex-grow place-items-center mx-10">
                 <h1 className="text-2xl font-bold">Gold Membership</h1>
                     <ui>
                         <li>100 request per day</li>
