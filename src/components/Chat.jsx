@@ -80,7 +80,7 @@ const Chat = () => {
   }
 
   return (
-    <div className=" w-full md:w-1/3 m-auto h-[70vh] bg-800 border-2   ">
+    <div className=" w-full md:w-1/3 m-auto h-[70vh] mt-10 bg-white border-2 rounded-md  ">
       <div className=" ">
         <div className="flex p-3 border-b-1">
         <div className="w-10 rounded-full mx-5">
@@ -107,11 +107,11 @@ const Chat = () => {
         })}
         <div ref={messageRef}/>
         </div>
-        <div className=" px-2 my-2 py-5 md: flex ">
+        <div className=" px-2 my-2 py-5 md:py-2 md: flex bg-base-300">
             <div className="w-[90%] "><input type="text"
             value={newMessage}
             onChange={(e)=>{setNewMessage(e.target.value)}}
-            className=" bg-base-300 w-full rounded-2xl p-2"/></div>
+            className=" bg-white w-full rounded-2xl p-2"/></div>
             <div 
             onClick={sendMessage}
             className=" px-5 ml-2 bg-emerald-500 rounded-2xl p-2 cursor-pointer">send</div>

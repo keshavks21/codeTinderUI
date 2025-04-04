@@ -47,7 +47,7 @@ const request = async()=>{
             requestData.map((data )=>{
                 const {_id,firstName, lastName, photoUrl, gender, age } = data.fromUserId;
                 return (
-                    <div key={_id} className=' md:w-2/3 h-24 flex items-center justify-evenly bg-base-300 mx-auto  my-4'>
+                    <div key={_id} className=' md:w-2/3 h-24 flex items-center justify-evenly bg-white mx-auto  my-4'>
                         <div className="w-1/4 flex justify-center">
                             <img src= {photoUrl} className=' h-20 rounded-full m-2' alt="UserPhoto"  />
                         </div>

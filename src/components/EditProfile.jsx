@@ -57,7 +57,7 @@ try{
         <h1 > Redirecting to Home Page</h1>
     </div>}
 
-      <h2 className="card-title text-2xl flex justify-center  font-semibold">Your Profile</h2>
+      <h2 className="card-title text-3xl flex justify-center  font-bold">Your Profile</h2>
       <div className=' md:flex justify-center'>
         <div>
           <UserCard user ={{firstName, lastName, age, gender, about, skills, photoUrl}} profileStatus={profileStatus}/>
