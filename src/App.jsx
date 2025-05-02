@@ -18,6 +18,7 @@ import ShippingAndDelivery from './policy/ShippingAndDelivery';
 import Premium from './components/Premium';
 import ResetPassword from './components/ResetPassword';
 import URLError from './components/URLError';
+import Editor from './components/Editor';
 
 function App() { 
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/request" element={<Requests/>}/>
                 <Route path="/premium" element={<Premium/>}/>
                 <Route path="/contactus" element={<ContactUs/>}/>
+                <Route path="/editor" element={<Editor/>}/>
                 <Route path="*" element={<URLError/>}/>
               </Route>
                 <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
