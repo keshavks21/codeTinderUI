@@ -27,7 +27,7 @@ const Navbar = () => {
   </div>
 {   user && <div className="flex items-center font-semibold">
   
-    <div>
+    <div className="mx-4 bg-base-300 p-2 rounded-sm">
       <Link to="/editor">Editor</Link>
     </div>
 
