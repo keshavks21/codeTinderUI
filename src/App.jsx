@@ -18,6 +18,9 @@ import ShippingAndDelivery from './policy/ShippingAndDelivery';
 import Premium from './components/Premium';
 import ResetPassword from './components/ResetPassword';
 import URLError from './components/URLError';
+import Editor from './components/Editor';
+import ConnectionProfile from './components/ConnectionProfile';
+import EditorRoom from './components/EditorRoom';
 
 function App() { 
 
@@ -32,10 +35,13 @@ function App() {
                 <Route path="/" element={<Feed/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/connection" element={<Connections/>}/>
+                <Route path="/connection/:withUserId" element={<ConnectionProfile/>}/>
                 <Route path="/chat/:targetUserId" element={<Chat/>}/>
                 <Route path="/request" element={<Requests/>}/>
                 <Route path="/premium" element={<Premium/>}/>
                 <Route path="/contactus" element={<ContactUs/>}/>
+                <Route path="/editor" element={<Editor/>}/>
+                <Route path="/editor/:roomId" element={<EditorRoom/>}/>
                 <Route path="*" element={<URLError/>}/>
               </Route>
                 <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>

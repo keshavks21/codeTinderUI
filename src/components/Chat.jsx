@@ -16,11 +16,10 @@ const Chat = () => {
   const messageRef = useRef(null);
 
   const fetchTargetUserInfo = async()=>{
-    const data = await axios.get(BASE_URL+"/user/connection/"+targetUserId,{withCredentials:true});
-    console.log(data?.data?.data);
+    const data = await axios.get(BASE_URL+"/user/connection/"+targetUserId,
+      {withCredentials:true});
 
     setTargetUser(data?.data?.data);
-    
   }
 
   const fecthChatMessages = async()=>{
@@ -36,7 +35,6 @@ const Chat = () => {
       })
  
       setMessages(chatMessages);
-    
   }
 
   useEffect(()=>{

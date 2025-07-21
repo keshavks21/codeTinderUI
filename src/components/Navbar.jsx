@@ -27,6 +27,9 @@ const Navbar = () => {
   </div>
 {   user && <div className="flex items-center font-semibold">
   
+      <div className="mx-2 bg-green-400 p-2 text-base-100 rounded-sm">
+        <Link to={"/editor"}>Editor</Link>
+      </div>
       <div className="dropdown dropdown-end bg-base-300 rounded-sm">
       <div className="flex flex-nowrap">
         <div tabIndex={0} role="button" className="btn btn-ghost avatar ">
