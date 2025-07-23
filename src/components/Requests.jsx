@@ -38,11 +38,11 @@ const request = async()=>{
     },[])
 
     if (!requestData) return;
-    if(requestData.length ==0)return <h1 className="text-center text-2xl font-semibold mt-10">No request found</h1>
+    if(requestData.length ==0)return <div className="h-screen"><h1 className="text-center text-2xl font-semibold mt-10">No request found</h1></div>
 
   return(
    requestData && (
-   <div>
+   <div className="h-screen">
        {  
             requestData.map((data )=>{
                 const {_id,firstName, lastName, photoUrl, gender, age } = data.fromUserId;

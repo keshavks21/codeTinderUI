@@ -28,13 +28,13 @@ const Feed = () => {
     }, [])
 
     if (!userFeed) return;
-    if(userFeed.length ==0)return <h1 className="text-center text-2xl font-semibold mt-10">No new user found</h1>
+    if(userFeed.length ==0)return <div className="h-screen"><h1 className="text-center text-2xl font-semibold mt-10">No new user found</h1></div>
 
-  return ( 
-    
+  return (
+
     userFeed && (
       
-      <div >
+      <div className="h-screen">
         
         {<UserCard user={userFeed[0]}/>}
           

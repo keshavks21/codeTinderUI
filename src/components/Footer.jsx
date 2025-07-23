@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="fixed bottom-0  footer footer-center bg-white text-base-content p-2 ">
+      <footer className="footer footer-center bg-white text-base-content p-2 ">
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by DevCircle

@@ -27,11 +27,13 @@ const Connection = () => {
     },[])
 
     if(!connectionData)return ;
-    if(connectionData.length===0)return <h1 className="text-center text-2xl font-semibold mt-10">No connection found</h1>;;
+    if(connectionData.length===0)return <div className='h-screen'>
+        <h1 className="text-center text-2xl font-semibold mt-10 ">No connection found</h1>;;
+    </div>
 
   return (
    connectionData && (
-   <div className='text-center m-2'>
+   <div className='h-screen text-center m-2'>
         <h1 className="  font-bold text-3xl my-4">Connections</h1>
         {
             connectionData.map((data )=>{
