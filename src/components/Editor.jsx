@@ -10,16 +10,33 @@ const Editor = () => {
     const [keyError, setKeyError] = useState("");
     const navigate = useNavigate();
 
-    const handleRoom = async(action)=>{
+    const handleCreateRoom = async()=>{
       try{
         if(key && key.length >0){ 
-          await axios.get(BASE_URL+"/editor/"+action+"/"+key, {withCredentials:true});
+          await axios.post(BASE_URL+"/editor/create/"+key,{}, {withCredentials:true});
           navigate(`/editor/${key}`);
         }
       }catch(err){
         console.log(err);
         
-        setKeyError(err.response.data.message || "Something went wrong");
+        setKeyError(err?.response?.data?.message);
+        setTimeout(() => {
+          setKeyError("");
+        }, 3000);
+        console.log(err);
+      } 
+    }
+
+    const handleJoinRoom = async()=>{
+      try{
+        if(key && key.length >0){ 
+          await axios.get(BASE_URL+"/editor/join/"+key, {withCredentials:true});
+          navigate(`/editor/${key}`);
+        }
+      }catch(err){
+        console.log(err);
+        
+        setKeyError(err?.response?.data?.message);
         setTimeout(() => {
           setKeyError("");
         }, 3000);
@@ -52,7 +69,7 @@ const Editor = () => {
         <p className='text-red-500 text-sm'>{keyError}</p>
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition"
-          onClick={()=>handleRoom(createKeyPage? "create" : "join")}
+          onClick={createKeyPage ? handleCreateRoom : handleJoinRoom}
         >
           {createKeyPage? "Create" : " Join"}
         </button>
