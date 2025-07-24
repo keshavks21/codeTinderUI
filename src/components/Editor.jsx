@@ -13,7 +13,7 @@ const Editor = () => {
     const handleRoom = async(action)=>{
       try{
         if(key && key.length >0){ 
-          await axios(BASE_URL+"/editor/"+action+"/"+key, {withCredentials:true});
+          await axios.get(BASE_URL+"/editor/"+action+"/"+key, {withCredentials:true});
           navigate(`/editor/${key}`);
         }
       }catch(err){
