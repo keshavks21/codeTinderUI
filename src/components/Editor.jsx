@@ -14,9 +14,11 @@ const Editor = () => {
       try{
         if(key && key.length >0){ 
           await axios(BASE_URL+"/editor/"+action+"/"+key, {withCredentials:true});
-          navigate("/editor/"+key);
+          navigate(`/editor/${key}`);
         }
       }catch(err){
+        console.log(err);
+        
         setKeyError(err.response.data.message || "Something went wrong");
         setTimeout(() => {
           setKeyError("");
