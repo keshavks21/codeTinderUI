@@ -46,9 +46,9 @@ const handleChange =(e)=>{
 }
 
   return (
-    <div className="w-full h-screen flex flex-row">
-
-        <div className='w-[30%] bg-[#1e293b] flex flex-col p-5'>
+    <div className="w-full h-screen flex flex-col-reverse md:flex-row ">
+ 
+        <div className='md:w-[30%] mt-10 md:mt-0 bg-[#1e293b] flex flex-col p-5'>
             <div className="text-white text-3xl font-bold mb-4">Users <span className="text-blue-500">Online</span></div>
             <div className="flex flex-col gap-4 mt-4">
             {
@@ -64,13 +64,13 @@ const handleChange =(e)=>{
             </div>
         </div>
 
-        <div className='w-[70%]  bg-gray-800  overflow-hidden'>
+        <div className='md:w-[70%] mt-10 md:mt-0 bg-gray-800  overflow-hidden'>
             <div className="bg-gray-900 text-white flex justify-between p-5 ">
                 <h1 className="text-2xl font-bold">Collaborative Editor </h1>
                 <p className="text-gray-400">Room Id : {roomId}</p>
             </div>
             <textarea onChange={(e)=>handleChange(e)} value={editorText}
-            className="w-full h-full p-6 text-lg font-mono text-green-500 font-semibold bg-black resize-none outline-none"
+            className="w-full h-screen md:h-full p-6 text-lg font-mono text-green-500 font-semibold bg-black resize-none outline-none"
             placeholder="Start typing here..."
             />
         </div>

@@ -35,9 +35,7 @@ const Body = ()=>{
     return (
         <div className="flex flex-col min-h-screen bg-base-300">
             <Navbar/>
-            <div className="mb-40 md:mb-10">
             <Outlet />
-            </div>
             <Footer/>
         </div>
     )

@@ -15,11 +15,11 @@ const ConnectionProfile = () => {
         data();
     },[withUserId])
     
-    if(!user )return <p className="text-center text-2xl">Loading...</p>
+    if(!user )return <div className="h-screen"><p className="text-center text-2xl">Loading...</p></div>
 
   return (
-    <div className="flex justify-center items-center">
-        <div className="w-[40%] bg-base-100 mt-10 flex flex-row rounded-sm">
+    <div className="flex justify-center items-center w-full h-screen">
+        <div className="md:w-[40%] -mt-40 bg-base-100 flex flex-row rounded-sm">
             <div className="w-[50%] p-5">
                 <div className="flex flex-col ">
                     <img src={user.photoUrl} alt="user Profile" className="rounded-full w-[40%]" />
